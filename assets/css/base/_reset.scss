@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+ul {
+  list-style: none;
+}
+
+@mixin bg {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: 0.8;
+    z-index: -1;
+    left: 0;
+    top: 0;
+  }
+}
+
+.btn{
+    display: inline-block;
+    color: #fff;
+    border-radius: 7px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: .3s;
+    &.btn-box{
+        background-color: #ff7720;
+        padding: 10px 30px;
+        &:hover{
+            background-color: tomato;
+        }
+    }
+    &.btn-border{
+        border: 2px solid #ff7720;
+        padding: 8px 30px;
+        &:hover{
+            border-color: tomato;
+        }
+    }
+}
+
+@for $i from 1 to 12 {
+    .pt-#{$i * 10} {
+        padding-top: $i * 10px;
+    }
+    .pb-#{$i * 10} {
+        padding-bottom: $i * 10px;
+    }
+    .mt-#{$i * 10} {
+        margin-top: $i * 10px;
+    }
+    .mb-#{$i * 10} {
+        margin-bottom: $i * 10px;
+    }
+}
